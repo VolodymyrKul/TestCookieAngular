@@ -1,0 +1,21 @@
+<p>signin works!</p>
+<button class="btn btn-primary" (click)="getcurrentuser()">GetUser</button>
+<button class="btn btn-primary" (click)="controllergetuser()">GetControllerUser</button>
+<table class="table table-striped">
+    <thead>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Options</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u?.firstName}}</td>
+            <td>{{u?.lastName}}</td>
+            <td>{{u?.email}}</td>
+            <td>{{u?.password}}</td>
+            <td><a type="btn" class="btn btn-primary" (click)="login(u)">Login</a></td>
+        </tr>
+    </tbody>
+</table>
