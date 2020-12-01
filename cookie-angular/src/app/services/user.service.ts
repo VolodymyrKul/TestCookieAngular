@@ -21,16 +21,17 @@ export class UserService {
   createUser(user: User) {
     return this.http.post(this.url, user);
   }
-  updateUser(user: User) {
 
+  updateUser(user: User) {
     return this.http.put(this.url, user);
   }
+
   deleteUser(id: number) {
     return this.http.delete(this.url + '/' + id);
   }
+
   getCurrenUser(Token: any){
     const header = {Authorization: `Bearer ${Token}`};
     return this.http.get(this.url+"/info",{headers: header})
   }
-  
 }

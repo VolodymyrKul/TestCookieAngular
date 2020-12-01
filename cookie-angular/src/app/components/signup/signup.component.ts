@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  user: User = new User(); 
+  users: User[];
 
-  constructor() { }
+  constructor(private userservice: UserService) { }
 
   ngOnInit(): void {
   }
 
+  register(): void {
+    this.user.iduserrole=3;
+    this.user.notificationPermission="+";
+    this.user.registerDate = new Date().toUTCString();
+    this.userservice.createUser(this.user);
+  }
 }

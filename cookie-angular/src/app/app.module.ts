@@ -9,6 +9,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { RequestsComponent } from './components/requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignupComponent } from './components/signup/signup.component';
     SigninComponent,
     AccountComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    RequestsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
