@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service'
+import { Router } from "@angular/router"
  
 @Component({
   selector: 'app-account',
@@ -13,8 +14,9 @@ export class AccountComponent implements OnInit {
 
   id: number;
   accountuser: User;
+  cardName: string;
   private subscription: Subscription;
-  constructor(private activateRoute: ActivatedRoute, private userservice: UserService) { 
+  constructor(private activateRoute: ActivatedRoute, private userservice: UserService, private router: Router) { 
     this.subscription = activateRoute.params.subscribe(params => this.id = params['id']);
   }
 
@@ -22,6 +24,11 @@ export class AccountComponent implements OnInit {
     this.userservice.getUser(this.id)
     .subscribe((data: User)=> {
       this.accountuser = data;
+      this.cardName = this.accountuser.firstName + " " + this.accountuser.lastName;
     })
+  }
+
+  requestopen(){
+    this.router.navigate(['requests', this.id.toString()]);
   }
 }

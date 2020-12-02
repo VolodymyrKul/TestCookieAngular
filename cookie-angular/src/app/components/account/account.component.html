@@ -2,7 +2,7 @@
     <form class="ml-5 mt-5">
       <div class="form-row d-flex">
         <div class="form-group d-flex flex-grow-1 border border-secondary rounded">
-          <input type="text" readonly class="form-control-plaintext pl-1" style="text-align: center;" id="staticRole" value="{{accountuser.userRoleTitle}}">
+          <input type="text" readonly class="form-control-plaintext pl-1" style="text-align: center;" id="staticRole" [value]="accountuser?.userRoleTitle">
         </div>
         <div class="form-group ml-1 mr-1">
           <button class="btn btn-primary">
@@ -12,7 +12,7 @@
       </div>
       <div class="form-row d-flex">
         <div class="form-group d-flex flex-grow-1 border border-secondary rounded">
-          <input type="text" readonly class="form-control-plaintext pl-1" id="staticName" value="{{accountuser.firstName}}">
+          <input type="text" readonly class="form-control-plaintext pl-1" id="staticName" [value]="accountuser?.firstName">
         </div>
         <div class="form-group ml-1 mr-1">
           <button class="btn btn-primary">
@@ -20,7 +20,7 @@
           </button>
         </div>
         <div class="form-group d-flex flex-grow-1 border border-secondary rounded">
-          <input type="text" readonly class="form-control-plaintext pl-1" id="staticSurname" value="{{accountuser.lastName}}">
+          <input type="text" readonly class="form-control-plaintext pl-1" id="staticSurname" [value]="accountuser?.lastName">
         </div>
         <div class="form-group ml-1 mr-1">
           <button class="btn btn-primary">
@@ -30,7 +30,7 @@
       </div>
       <div class="form-row d-flex">
         <div class="form-group d-flex flex-grow-1 border border-secondary rounded">
-          <input type="text" readonly class="form-control-plaintext pl-1" id="staticEmail" value="{{accountuser.email}}">
+          <input type="text" readonly class="form-control-plaintext pl-1" id="staticEmail" [value]="accountuser?.email">
         </div>
         <div class="form-group ml-1 mr-1">
           <button class="btn btn-primary">
@@ -38,7 +38,7 @@
           </button>
         </div>
         <div class="form-group d-flex flex-grow-1 border border-secondary rounded">
-          <input type="text" readonly class="form-control-plaintext pl-1" id="staticPass" value="{{accountuser.password}}">
+          <input type="text" readonly class="form-control-plaintext pl-1" id="staticPass" [value]="accountuser?.password">
         </div>
         <div class="form-group ml-1 mr-1">
           <button class="btn btn-primary">
@@ -59,8 +59,8 @@
     <div class="card mx-auto bg-secondary" style="width:300px; position: relative;">
       <img class="card-img-top" style="width:300px; height: 400px;" src="https://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue.svg" alt="Card image">
       <div class="card-body">
-          <h4 class="card-title" style="text-align: center;">John Doe</h4>
-          <a href="#" class="btn btn-primary w-100">Requests</a>
+          <h4 class="card-title" style="text-align: center;">{{cardName}}</h4>
+          <a (click)="requestopen()" class="btn btn-primary w-100">Requests</a>
           <a href="#" class="btn btn-primary w-100 mt-2">Employees</a>
       </div>
     </div>

@@ -21,5 +21,6 @@ export class SignupComponent implements OnInit {
     this.user.notificationPermission="+";
     this.user.registerDate = new Date().toUTCString();
     this.userservice.createUser(this.user);
+    console.log("Register complete");
   }
 }

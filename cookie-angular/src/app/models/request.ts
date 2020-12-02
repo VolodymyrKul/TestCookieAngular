@@ -4,7 +4,7 @@ export class Request {
         public title?: string,
         public description?: string,
         public price?: string,
-        public createDate?: string,
+        public createData?: string,
         public endDate?: string,
         public status?: string,
         public prevStatus?: string,

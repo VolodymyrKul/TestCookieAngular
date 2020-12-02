@@ -1,0 +1,49 @@
+.RoleBlock{
+    height: 75px;
+    /*margin: 10px;*/
+    margin-top: 10px;
+    /*background-color: yellow;*/
+  }
+  .UlOutside{
+    /* height: 200px; */
+    /*margin: 10px;*/
+    margin-top: 10px;
+    /*background-color: yellow;*/
+  }
+  .FirstOption{
+    margin-right: 10px;
+    text-align: center;
+    /*border: 2px ridge red;*/
+  }
+  .SecondOption{
+    margin-left: 10px;
+    text-align: center;
+    /*border: 2px ridge red;*/
+  }
+  .ListItemDiv{
+    width: 100%;
+    /*background-color: gray;*/
+  }
+  .ListItemDivItem{
+    /*background-color: indigo;*/
+    border: 1px ridge coral
+  }
+  .UlStyle{
+    list-style-type: none;
+    /* margin: 0px; */
+    padding: 0px;
+  }
+  .NotesItemDiv{
+    height: 100px;
+    /*background-color: indigo;
+    border: 1px ridge coral*/
+  }
+  .UlListItemStyle{
+    margin-top: 10px;
+    /* margin: 0px;
+    padding: 0px; */
+  }
+  .BtnImgStyle{
+    width: 22px;
+    height: 22px;
+  }
