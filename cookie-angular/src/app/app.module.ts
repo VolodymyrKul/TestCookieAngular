@@ -10,6 +10,8 @@ import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { ApprovereqComponent } from './components/approvereq/approvereq.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RequestsComponent } from './components/requests/requests.component';
     AccountComponent,
     HomeComponent,
     SignupComponent,
-    RequestsComponent
+    RequestsComponent,
+    ApprovereqComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

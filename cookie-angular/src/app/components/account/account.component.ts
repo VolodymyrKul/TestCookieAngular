@@ -31,4 +31,8 @@ export class AccountComponent implements OnInit {
   requestopen(){
     this.router.navigate(['requests', this.id.toString()]);
   }
+
+  approveopen(){
+    this.router.navigate(['userreqs', this.id.toString()]);
+  }
 }

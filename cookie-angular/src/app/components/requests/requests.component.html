@@ -1,55 +1,94 @@
 <div class="d-flex RoleBlock container align-content-center align-items-center w-75">
-    <div class="p-2 flex-fill FirstOption">
-      <button type="button" class="btn btn-success btn-block">Create request</button>
-    </div>
-    <div class="p-2 flex-fill SecondOption">
-      <button type="button" class="btn btn-danger btn-block">Cancel request</button>
-    </div>
+  <div class="p-2 flex-fill FirstOption">
+    <button type="button" class="btn btn-success btn-block">Create request</button>
   </div>
-  <div class="d-flex UlOutside container align-items-center w-75">
-    <div class="p-2 flex-fill">
-      <ul class="UlStyle">
-        <li *ngFor="let req of myrequests" class="UlListItemStyle">
-          <div class="d-flex ListItemDiv">
-            <div class="d-flex flex-fill ListItemDivItem align-items-center pl-1">
-              <p class="mt-auto mb-auto">{{req.userEmail}}</p>
-            </div>
-            <div class="d-flex flex-fill ListItemDivItem align-items-center pl-1">
-              <p class="mt-auto mb-auto">{{req.price}}</p>
-            </div>
-            <div class="d-flex flex-fill ListItemDivItem align-items-center pl-1">
-              <p class="mt-auto mb-auto">{{req.createData}}</p>
-            </div>
-            <div class="d-flex flex-fill ListItemDivItem align-items-center pl-1">
-              <p class="mt-auto mb-auto">{{req.status}}</p>
-            </div>
-            <div class="d-flex flex-fill ListItemDivItem justify-content-between">
-              <div class="align-content-center mt-auto mb-auto">
-                <button type="button" class="btn btn-primary">
-                    <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/21269369161530177266-512.png" alt="Not_Found"/>
-                </button>
-              </div>
-              <div class="align-content-center mt-auto mb-auto">
-                <button type="button" class="btn btn-primary">
-                    <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/9772771411530273514-512.png" alt="Not_Found"/>
-                </button>
-              </div>
-              <div class="align-content-center mt-auto mb-auto">
-                <button type="button" class="btn btn-primary">
-                    <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/9330100171560146806-512.png" alt="Not_Found"/>
-                </button>
-              </div>
-              <div class="align-content-center mt-auto mb-auto">
-                <button type="button" class="btn btn-primary">
-                    <img class="BtnImgStyle" src="https://image.flaticon.com/icons/svg/36/36687.svg" alt="Not_Found"/>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex NotesItemDiv">
-            <div class="d-flex flex-fill ListItemDivItem">{{req.description}}</div>
-          </div>
+  <div class="p-2 flex-fill SecondOption">
+    <button type="button" class="btn btn-danger btn-block">Cancel request</button>
+  </div>
+</div>
+<div class="d-flex UlOutside container align-items-center w-75">
+  <div class="p-2 flex-fill">
+    <ul class="UlStyle">
+        <li class="UlListItemStyle">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th class="TableDataWidth">
+                            <h5>
+                                Owner email
+                            </h5>
+                        </th>
+                        <th class="TableDataWidth">
+                            <h5>
+                                Title
+                            </h5>
+                        </th>
+                        <th class="TableDataWidth">
+                            <h5>
+                                Price
+                            </h5>
+                        </th>
+                        <th class="TableDataWidth">
+                            <h5>
+                                Register Date
+                            </h5>
+                        </th>
+                        <th class="TableDataWidth">
+                            <h5>
+                                Status
+                            </h5>
+                        </th>
+                        <th class="TableOptionWidth">
+                            <h5 class="mx-auto">
+                                Options
+                            </h5>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let req of myrequests let in=index">
+                    <tr>
+                      <td style="vertical-align: middle;">
+                          {{req?.userEmail}}
+                      </td>
+                      <td style="vertical-align: middle;">
+                          {{req?.title}}
+                      </td>
+                      <td style="vertical-align: middle;">
+                          {{req?.price}}
+                      </td>
+                      <td style="vertical-align: middle;">
+                          {{req?.createData}}
+                      </td>
+                      <td style="vertical-align: middle;">
+                          {{req?.status}}
+                      </td>
+                      <td>
+                          <div class="d-flex align-content-center ml-auto mr-auto justify-content-center">
+                              <button type="button" class="btn btn-primary" (click)="changemodearr(req)">
+                                  <img class="BtnImgStyle" src="https://image.flaticon.com/icons/svg/37/37111.svg" alt="Not_Found"/>
+                              </button>
+                              <button type="button" class="btn btn-primary ml-1">
+                                  <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/9772771411530273514-512.png" alt="Not_Found"/>
+                              </button>
+                              <button type="button" class="btn btn-primary ml-1">
+                                  <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/21269369161530177266-512.png" alt="Not_Found"/>
+                              </button>
+                              <button type="button" class="btn btn-primary ml-1" data-toggle="tooltip" data-placement="left" title="Some much description. Some much description. Some much description. Some much description">
+                                  <img class="BtnImgStyle" src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/9330100171560146806-512.png" alt="Not_Found"/>
+                              </button>
+                            </div>
+                      </td>
+                    </tr>
+                    <tr *ngIf="descmodearr[in]">
+                      <td colspan="6" style="vertical-align: middle; ">
+                        {{req?.description}}
+                      </td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+            </table>
         </li>
-      </ul>
-    </div>
+    </ul>
   </div>
+</div>
